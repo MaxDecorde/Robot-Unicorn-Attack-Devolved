@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
     public LayerMask groundLayerMask;
     public LayerMask obstacleLayerMask;
+    public Animator animator;
 
     GroundFall fall;
 
@@ -48,6 +49,8 @@ public class Player : MonoBehaviour
                 isHoldingJump = true;
                 holdJumpTimer = 0;
 
+                animator.SetBool("jump", isHoldingJump);
+
                 if (fall != null)
                 {
                     fall.player = null;
@@ -59,6 +62,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isHoldingJump = false;
+            animator.SetBool("jump", isHoldingJump);
         }
 
 
