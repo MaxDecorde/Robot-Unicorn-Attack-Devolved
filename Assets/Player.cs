@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     public LayerMask groundLayerMask;
     public LayerMask obstacleLayerMask;
     public Animator animator;
+    public AudioSource audioSource;
+    public AudioClip sound;
 
     GroundFall fall;
 
@@ -73,14 +75,17 @@ public class Player : MonoBehaviour
     {
         if (isDead)
         {
+            audioSource.PlayOneShot(sound);
+            animator.SetBool("death", isDead);
             return;
         }
 
         Vector2 pos = transform.position;
 
-        if (pos.y < -20)
+        if (pos.y < 4.5)
         {
             isDead = true;
+            animator.SetBool("death", isDead);
             
         }
 
