@@ -73,7 +73,7 @@ public class Ground : MonoBehaviour
         float maxJumpHeight = h1 + h2;
         float maxY = maxJumpHeight * 0.7f;
         maxY += groundHeight;
-        float minY = 3;
+        float minY = 5;
         float actualY = Random.Range(minY, maxY);
 
         pos.y = actualY - goCollider.size.y / 2;
