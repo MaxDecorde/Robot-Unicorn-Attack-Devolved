@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -29,11 +30,6 @@ public class Player : MonoBehaviour
 
     GroundFall fall;
 
-    void Start()
-    {
-           
-    }
-
     void Update()
     {
         Vector2 pos = transform.position;
@@ -41,14 +37,16 @@ public class Player : MonoBehaviour
 
         if (isGrounded || groundDistance <= jumpGroundThreshold)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) 
+                || Input.GetMouseButtonDown(MouseButton.LeftMouse.GetHashCode())
+                || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) )
             {
                 isGrounded = false;
                 velocity.y = jumpVelocity;
                 isHoldingJump = true;
                 holdJumpTimer = 0;
 
-                if (fall != null)
+                if (fall)
                 {
                     fall.player = null;
                     fall = null;
@@ -56,13 +54,9 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            isHoldingJump = false;
-        }
-
-
-
+        if (Input.GetKeyUp(KeyCode.Space)
+            || Input.GetMouseButtonUp(MouseButton.LeftMouse.GetHashCode())
+            || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) ) isHoldingJump = false;
     }
 
     private void FixedUpdate()
