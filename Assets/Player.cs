@@ -27,6 +27,9 @@ public class Player : MonoBehaviour
 
     public LayerMask groundLayerMask;
     public LayerMask obstacleLayerMask;
+    public Animator animator;
+    public AudioSource audioSource;
+    public AudioClip sound;
 
     GroundFall fall;
 
@@ -46,6 +49,8 @@ public class Player : MonoBehaviour
                 isHoldingJump = true;
                 holdJumpTimer = 0;
 
+                animator.SetBool("jump", isHoldingJump);
+
                 if (fall)
                 {
                     fall.player = null;
@@ -54,23 +59,28 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space)
-            || Input.GetMouseButtonUp(MouseButton.LeftMouse.GetHashCode())
-            || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) ) isHoldingJump = false;
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(MouseButton.LeftMouse.GetHashCode()) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended){ 
+        
+        isHoldingJump = false;
+        animator.SetBool("jump", isHoldingJump);
+
     }
 
     private void FixedUpdate()
     {
         if (isDead)
         {
+            audioSource.PlayOneShot(sound);
+            animator.SetBool("death", isDead);
             return;
         }
 
         Vector2 pos = transform.position;
 
-        if (pos.y < -20)
+        if (pos.y < 4.5)
         {
             isDead = true;
+            animator.SetBool("death", isDead);
             
         }
 

@@ -5,20 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class UIControllerTitle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void play()
+    public GameObject panelMain;
+    public GameObject panelSettings;
+    
+    public void Play()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+    
+    public void Parameters(bool toggle)
+    {
+        panelMain.SetActive(!toggle);
+        panelSettings.SetActive(toggle);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
