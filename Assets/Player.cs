@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
 
         Vector2 pos = transform.position;
 
-        if (pos.y < 4.5)
+        if (pos.y < 0)
         {
             isDead = true;
             animator.SetBool("death", isDead);
