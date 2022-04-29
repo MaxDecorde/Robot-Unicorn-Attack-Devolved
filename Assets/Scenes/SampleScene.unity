@@ -588,13 +588,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 708046228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd00572285ca684983b98ee1d497b4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 36d85c2cb6a0a4b41aa9d832e9872fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   groundHeight: 0
   groundRight: 0
   screenRight: 0
-  boxTemplate: {fileID: 2561960849809884316, guid: 4ae8070af6c7bac438012f6338bce495, type: 3}
+  boxTemplate: {fileID: 0}
 --- !u!4 &708046230
 Transform:
   m_ObjectHideFlags: 0

@@ -59,10 +59,12 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(MouseButton.LeftMouse.GetHashCode()) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended){ 
-        
-        isHoldingJump = false;
-        animator.SetBool("jump", isHoldingJump);
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonUp(MouseButton.LeftMouse.GetHashCode()) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended))
+        {
+
+            isHoldingJump = false;
+            animator.SetBool("jump", isHoldingJump);
+        }
 
     }
 
