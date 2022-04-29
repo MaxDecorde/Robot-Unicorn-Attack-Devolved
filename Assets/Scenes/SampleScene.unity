@@ -516,8 +516,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.36378, y: 120}
-  m_SizeDelta: {x: 179.455, y: 62.349}
+  m_AnchoredPosition: {x: 0.0000038147, y: 121}
+  m_SizeDelta: {x: 304.651, y: 62.349}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &621396239
 MonoBehaviour:
@@ -540,7 +540,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 556884de1bc2243be892b0ad44a2de7c, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -552,7 +552,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You ran
+  m_Text: Distance parcourue
 --- !u!222 &621396240
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1111,7 +1111,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 556884de1bc2243be892b0ad44a2de7c, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -1393,7 +1393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playlist:
-  - {fileID: 8300000, guid: 1ee79c2d49e923d4aafd7e0f83b0d28d, type: 3}
+  - {fileID: 8300000, guid: bbe8a82ef113a4e6ea83ae077c9c5d9b, type: 3}
   audioSource: {fileID: 1846757717}
 --- !u!82 &1846757717
 AudioSource:
@@ -1404,7 +1404,7 @@ AudioSource:
   m_GameObject: {fileID: 1846757715}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 749526e37f50243f692a987aaf3037d0, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.2
@@ -1753,7 +1753,7 @@ AudioSource:
   m_GameObject: {fileID: 2067783750}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 749526e37f50243f692a987aaf3037d0, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.3
